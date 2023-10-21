@@ -18,14 +18,13 @@ Questo documento fornisce una guida su come installare Node.js, npm e Swagger pe
 ## Inizializzare il progetto 
 Crea una nuova cartella per il tuo progetto e assicurati di avere un file package.json con le dipendenze necessarie. Puoi inizializzare un progetto Node.js con il seguente comando:
 
-
    ```shell
    npm init
 
 Installa il framework Express.js:
 
-```shell
- npm install express
+   ```shell
+   npm install express
 
 ## Installazione di Swagger
 
