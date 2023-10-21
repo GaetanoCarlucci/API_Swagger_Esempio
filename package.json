@@ -1,0 +1,16 @@
+{
+  "name": "api_esempio",
+  "version": "1.0.0",
+  "description": "esercizio su api per la 5_informatica",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "swagger-jsdoc": "^6.2.8",
+    "swagger-ui-express": "^5.0.0"
+  }
+}
