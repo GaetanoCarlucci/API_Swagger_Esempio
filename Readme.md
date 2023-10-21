@@ -25,7 +25,7 @@ Crea una nuova cartella per il tuo progetto e assicurati di avere un file packag
 Installa il framework Express.js:
 
 ```shell
-   npm install express
+ npm install express
 
 ## Installazione di Swagger
 
