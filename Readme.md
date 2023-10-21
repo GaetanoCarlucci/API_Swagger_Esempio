@@ -1,6 +1,6 @@
-# Documentazione del Progetto Node.js
+# Documentazione del Progetto API esempio per la 5 Informatica
 
-Questo documento fornisce una guida su come installare Node.js, npm e Swagger per il tuo progetto Node.js.
+Questo documento fornisce una guida su come installare Node.js, npm e Swagger per il progetto API esempio per la 5 Informatica
 
 ## Installazione di Node.js
 
