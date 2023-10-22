@@ -38,10 +38,10 @@ var students = [];
  *     description: Aggiunge uno studente alla lista degli studenti.
  *     requestBody:
  *       required: true
- *       content:
+ *       content: 
  *         text/plain:
- *           schema:
- *             type: string
+ *            schema:
+ *              type: string
  *     responses:
  *       '201':
  *         description: Studente inserito con successo
@@ -66,7 +66,7 @@ app.post('/api/students', (req, res) => {
  *         description: Elenco di studenti
  *         content:
  *           text/plain:
- *             example: |
+ *             example: 
  *               NomeStudente1
  *               NomeStudente2
  *     tags:
@@ -75,6 +75,50 @@ app.post('/api/students', (req, res) => {
 app.get('/api/students', (req, res) => {
   res.send(students.join('\n'));
 });
+
+/**
+ * @swagger
+ * /api/somma:
+ *   post:
+ *     summary: Calcola la somma di due numeri
+ *     description: Accetta due numeri come stringa separati da uno spazio e restituisce la somma.
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         text/plain:
+ *           schema:
+ *             type: string
+ *     responses:
+ *       '200':
+ *         description: Somma dei numeri riuscita
+ *         content:
+ *           text/plain:
+ *             schema:
+ *               type: integer
+ *       '400':
+ *         description: Richiesta non valida
+ *         content:
+ *           text/plain:
+ *             schema:
+ *               type: string
+ *     tags:
+ *       - Somma
+ */
+app.post('/api/somma', (req, res) => {
+  const numeri_stringa = req.body;
+
+  // Analizza i dati di testo in numeri
+  const numbers = numeri_stringa.split(' ');
+
+  const [num1, num2] = numbers;
+  const result = Number(num1) + Number(num2);
+  if (isNaN(result)) {
+    res.status(400).send('La somma non è un numero valido.');
+  } else {
+    res.send(result.toString());
+  }
+});
+
 
 // Avvia il server
 app.listen(port, '0.0.0.0', () => {

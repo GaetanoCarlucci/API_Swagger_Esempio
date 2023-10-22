@@ -19,6 +19,22 @@ app.get('/api/students', (req, res) => {
   res.send(students.join('\n'));
 });
 
+// Endpoint per la somma
+app.post('/api/somma', (req, res) => {
+  const numeri_stringa = req.body;
+
+  // Analizza i dati di testo in numeri
+  const numbers = numeri_stringa.split(' ');
+
+  const [num1, num2] = numbers;
+  const result = Number(num1) + Number(num2);
+  if (isNaN(result)) {
+    res.status(400).send('La somma non è un numero valido.');
+  } else {
+    res.send(result.toString());
+  }
+});
+
 // Avvia il server
 app.listen(port, '0.0.0.0', () => {
   console.log(`Server in ascolto sulla porta ${port}`);
