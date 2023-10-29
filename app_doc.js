@@ -11,9 +11,9 @@ const options = {
       title: 'Applicazione per la gestione degli studenti',
       version: '1.0.0',
       contact: {
-        name: 'Esercizio per la 5',
-        email: 'pippo@appunti.it',
-        url: 'https://www.esempio.it/',
+        name: 'Esercizio per la 5 Informatica',
+        email: 'gaetano.carlucci.sg28391@iissvoltadegemmis.edu.it',
+        url: 'https://github.com/GaetanoCarlucci/API_Swagger_Esempio',
       },
     },
   },
@@ -31,7 +31,7 @@ var students = [];
 
 // API per inserire uno studente
 /**
- * @swagger
+ * @openapi
  * /api/students:
  *   post:
  *     summary: Aggiungi uno studente
@@ -56,7 +56,7 @@ app.post('/api/students', (req, res) => {
 
 // API per leggere tutti gli studenti inseriti
 /**
- * @swagger
+ * @openapi
  * /api/students:
  *   get:
  *     summary: Ottieni tutti gli studenti
@@ -127,7 +127,6 @@ app.get('/api/somma', (req, res) => {
     res.send(result.toString());
   }
 });
-
 
 // Avvia il server
 app.listen(port, '0.0.0.0', () => {
