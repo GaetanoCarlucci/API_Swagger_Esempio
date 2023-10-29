@@ -19,18 +19,17 @@ app.get('/api/students', (req, res) => {
   res.send(students.join('\n'));
 });
 
-// Endpoint per la somma
-app.post('/api/somma', (req, res) => {
-  const numeri_stringa = req.body;
+// Endpoint per la somma con parametri nell'URL
+app.get('/api/somma', (req, res) => {
+  // Estrai i parametri num1 e num2 dalla query dell'URL
+  var num1 = Number(req.query.num1);
+  var num2 = Number(req.query.num2);
 
-  // Analizza i dati di testo in numeri
-  const numbers = numeri_stringa.split(' ');
-
-  const [num1, num2] = numbers;
-  const result = Number(num1) + Number(num2);
-  if (isNaN(result)) {
-    res.status(400).send('La somma non è un numero valido.');
+  // Verifica se i parametri sono numeri validi
+  if (isNaN(num1) || isNaN(num2)) {
+    res.status(400).send('I parametri della somma non sono numeri validi.');
   } else {
+    var result = num1 + num2;
     res.send(result.toString());
   }
 });

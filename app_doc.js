@@ -76,45 +76,54 @@ app.get('/api/students', (req, res) => {
   res.send(students.join('\n'));
 });
 
+// Endpoint per la somma con parametri nell'URL
 /**
- * @swagger
+ * @openapi
  * /api/somma:
- *   post:
- *     summary: Calcola la somma di due numeri
- *     description: Accetta due numeri come stringa separati da uno spazio e restituisce la somma.
- *     requestBody:
- *       required: true
- *       content:
- *         text/plain:
- *           schema:
- *             type: string
+ *   get:
+ *     summary: Esegue la somma di due numeri.
+ *     description: Questo endpoint accetta due parametri numerici (num1 e num2) nell'URL e restituisce la loro somma.
+ *     parameters:
+ *       - in: query
+ *         name: num1
+ *         required: true
+ *         schema:
+ *           type: number
+ *         description: Il primo numero da sommare.
+ *       - in: query
+ *         name: num2
+ *         required: true
+ *         schema:
+ *           type: number
+ *         description: Il secondo numero da sommare.
  *     responses:
  *       '200':
- *         description: Somma dei numeri riuscita
+ *         description: Successo. Restituisce la somma dei due numeri.
  *         content:
- *           text/plain:
+ *           application/json:
  *             schema:
- *               type: integer
+ *               type: number
+ *               example: 12
  *       '400':
- *         description: Richiesta non valida
+ *         description: Errore nei parametri della richiesta.
  *         content:
- *           text/plain:
+ *           application/json:
  *             schema:
  *               type: string
+ *               example: I parametri della somma non sono numeri validi.
  *     tags:
  *       - Somma
  */
-app.post('/api/somma', (req, res) => {
-  const numeri_stringa = req.body;
+app.get('/api/somma', (req, res) => {
+  // Estrai i parametri num1 e num2 dalla query dell'URL
+  var num1 = Number(req.query.num1);
+  var num2 = Number(req.query.num2);
 
-  // Analizza i dati di testo in numeri
-  const numbers = numeri_stringa.split(' ');
-
-  const [num1, num2] = numbers;
-  const result = Number(num1) + Number(num2);
-  if (isNaN(result)) {
-    res.status(400).send('La somma non è un numero valido.');
+  // Verifica se i parametri sono numeri validi
+  if (isNaN(num1) || isNaN(num2)) {
+    res.status(400).send('I parametri della somma non sono numeri validi.');
   } else {
+    var result = num1 + num2;
     res.send(result.toString());
   }
 });
