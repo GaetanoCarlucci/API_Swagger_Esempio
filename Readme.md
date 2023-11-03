@@ -57,6 +57,7 @@ Per avviare il server, assicurati di aver installato Node.js e npm. Quindi, segu
   ```shell
    node app_docs.js
    ```
+In caso di mancanza di errori, il server sara' disponibile al seguente URL [http://localhost:3000](http://localhost:3000)
 
 ### Aggiunta di uno Studente
 Per aggiungere uno studente alla lista, esegui una richiesta HTTP POST all'endpoint ```/api/students```. Invia il nome dello studente nel corpo della richiesta.
@@ -64,7 +65,7 @@ Per aggiungere uno studente alla lista, esegui una richiesta HTTP POST all'endpo
 ### Ottenere la Lista degli Studenti
 
 Per ottenere la lista di tutti gli studenti inseriti, esegui una richiesta HTTP GET all'endpoint ```/api/students```. \
-As esempio puoi accedere dal browser a questo link: [http://localhost:3000//api/students](http://localhost:3000//api/students)
+As esempio puoi accedere dal browser a questo link: [http://localhost:3000/api/students](http://localhost:3000/api/students)
 
 ### Somma di Due Numeri
 Per eseguire la somma di due numeri, esegui una richiesta HTTP GET all'endpoint ```/api/somma```. Assicurati di includere i parametri num1 e num2 nell'URL.
