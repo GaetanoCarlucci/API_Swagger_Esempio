@@ -1,4 +1,4 @@
-# Documentazione del Progetto API esempio per la 5 Informatica
+# Documentazione API per un progetto di esempio per la 5 Informatica
 
 Questo documento fornisce una guida su come installare Node.js, npm e Swagger per il progetto API esempio per la 5 Informatica
 
@@ -40,4 +40,36 @@ Esegui il seguente comando per installare il modulo **Swagger UI Express** e **S
 
   ```shell
   npm install swagger-ui-express swagger-jsdoc --save
+  ```
+
+## Uso dell'Applicazione di Gestione degli Studenti
+
+Questa parte della documentazione fornisce informazioni su come utilizzare l'applicazione Node.js per la gestione degli studenti.
+
+### Avvio del Server
+
+Per avviare il server, assicurati di aver installato Node.js e npm. Quindi, segui questi passi:
+
+1. Assicurati di essere nella directory del progetto.
+
+2. Apri il terminale e esegui il seguente comando:
+
+  ```shell
+   node app_docs.js
    ```
+In caso di mancanza di errori, il server sara' disponibile al seguente URL [http://localhost:3000](http://localhost:3000)
+
+### Aggiunta di uno Studente
+Per aggiungere uno studente alla lista, esegui una richiesta HTTP POST all'endpoint ```/api/students```. Invia il nome dello studente nel corpo della richiesta.
+
+### Ottenere la Lista degli Studenti
+
+Per ottenere la lista di tutti gli studenti inseriti, esegui una richiesta HTTP GET all'endpoint ```/api/students```. \
+As esempio puoi accedere dal browser a questo link: [http://localhost:3000/api/students](http://localhost:3000/api/students)
+
+### Somma di Due Numeri
+Per eseguire la somma di due numeri, esegui una richiesta HTTP GET all'endpoint ```/api/somma```. Assicurati di includere i parametri num1 e num2 nell'URL.
+
+## Documentazione OpenAPI
+
+La documentazione Swagger è disponibile all'indirizzo [http://localhost:3000/api-docs](http://localhost:3000/api-docs). Puoi utilizzarla per esplorare le API in dettaglio.
