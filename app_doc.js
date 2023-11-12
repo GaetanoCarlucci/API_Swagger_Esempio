@@ -100,14 +100,14 @@ app.get('/api/students', (req, res) => {
  *       '200':
  *         description: Successo. Restituisce la somma dei due numeri.
  *         content:
- *           application/json:
+ *           text/plain:
  *             schema:
  *               type: number
  *               example: 12
  *       '400':
  *         description: Errore nei parametri della richiesta.
  *         content:
- *           application/json:
+ *           text/plain:
  *             schema:
  *               type: string
  *               example: I parametri della somma non sono numeri validi.

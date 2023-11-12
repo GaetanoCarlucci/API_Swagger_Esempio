@@ -1,0 +1,53 @@
+{
+    "scuola": {
+      "nome": "Volta de Gemmis",
+      "classi": [
+        {
+          "nome": "Classe 5AIA",
+          "alunni": [
+            {
+              "nome": "Alice",
+              "materie": [
+                {
+                  "matematica": {
+                    "voti": [8, 7]
+                  }
+                },
+                {
+                  "italiano": {
+                    "voti": [9, 8]
+                  }
+                },
+                {
+                  "informatica": {
+                    "voti": [10, 9]
+                  }
+                }
+              ]
+            },
+            {
+              "nome": "Bob",
+              "materie": [
+                {
+                  "matematica": {
+                    "voti": [7, 8]
+                  }
+                },
+                {
+                  "italiano": {
+                    "voti": [8, 7]
+                  }
+                },
+                {
+                  "informatica": {
+                    "voti": [9, 10]
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+  
