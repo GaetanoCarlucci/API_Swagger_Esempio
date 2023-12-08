@@ -31,3 +31,37 @@ scuola:
                 voti:
                   - 9
                   - 10
+
+Scuola:
+  Nome: “Volta de Gemmis”
+  Alunni:
+   - nome: "Tuo Nome e Cognome"
+     Classe: “5IA”
+     Materie:
+       Matematica:
+        Voti: 
+         - 8
+         - 7
+       Italiano:
+        Voti:
+         - 9
+         - 8
+       Informatica:
+        Voti: 
+         - 10
+         - 9
+   - nome: "Nome e Cognome Compagno di Banco"
+     Classe: “5IA”
+     Materie:
+       Matematica:
+         Voti: 
+          - 7
+          - 8
+       Italiano:
+         Voti:
+          - 8 
+          - 7
+       Informatica:
+         Voti: 
+          - 9 
+          - 10
