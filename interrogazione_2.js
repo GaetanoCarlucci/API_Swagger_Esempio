@@ -35,7 +35,7 @@ app.use(express.text());
  *     description: Questo endpoint accetta tre parametri numerici (num1, num2 e num3) nell'URL e restituisce la loro somma.
  *     parameters:
  *       - in: query
- *         name: num1
+ *         name: XXX
  *         required: XXX
  *         schema:
  *           type: XXX
@@ -68,7 +68,6 @@ app.get('/api/somma', (req, res) => {
   // Estrai i parametri num1, num2 e num3 dalla query dell'URL
   var num1 = Number(req.query.num1);
   var num2 = Number(req.query.num2);
-  var num3 = Number(req.query.num3);
 
   if (!('num1' in req.query)) {
     res.status(412).send('Manca almeno un parametro richiesto');
