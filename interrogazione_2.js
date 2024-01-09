@@ -31,11 +31,11 @@ app.use(express.text());
  * @openapi
  * ??path??:
  *   ??method??:
- *     summary: Esegue la somma di XX numeri.
+ *     summary: Esegue la somma di XXX numeri.
  *     description: Questo endpoint accetta tre parametri numerici (num1, num2 e num3) nell'URL e restituisce la loro somma.
  *     parameters:
  *       - in: query
- *         name: XXX
+ *         name: num1
  *         required: XXX
  *         schema:
  *           type: XXX
@@ -52,15 +52,21 @@ app.use(express.text());
  *         content:
  *           XXX/YYY:
  *             schema:
- *               type: XXX
- *               example: 12
+ *               type: object
+ *               properties:
+ *                 sum:
+ *                   type: number
+ *               example: { "sum": 12 }
  *       '400':
  *         description: Errore nei parametri della richiesta.
  *         content:
  *           XXX/YYY:
  *             schema:
  *               type: XXX
- *               example: I parametri della somma non sono numeri validi.
+ *               properties:
+ *                 error:
+ *                   type: XXX
+ *               example: { "error": "I parametri della somma non sono numeri validi." }
  *     tags:
  *       - Modificare qui
  */
@@ -70,16 +76,22 @@ app.get('/api/somma', (req, res) => {
   var num2 = Number(req.query.num2);
 
   if (!('num1' in req.query)) {
-    res.status(412).send('Manca almeno un parametro richiesto');
+    res.status(412).json({ error: 'Manca almeno un parametro richiesto' });
     return;
   }
 
+  if (!('num2' in req.query)) {
+    res.status(412).json({ error: 'Manca almeno un parametro richiesto' });
+    return;
+  }
+
+
   // Verifica se i parametri sono numeri validi
   if (isNaN(num1) || isNaN(num2)) {
-    res.status(400).send('I parametri della somma non sono numeri validi.');
+    res.status(400).json({ error: 'I parametri della somma non sono numeri validi.' });
   } else {
     var result = num1 + num2;
-    res.send(result.toString());
+    res.json({ sum: result });
   }
 });
 

@@ -45,7 +45,7 @@ app.use(express.text());
  *         required: XXX
  *         schema:
  *           type: XXX
- *         description: Il numero con cui dividere (divisore). Il numero non deve essere = 0
+ *         description: Il numero con cui dividere (divisore). 
  *     responses:
  *       '200':
  *         description: Successo. Restituisce il risultato della divisione dei due numeri.
